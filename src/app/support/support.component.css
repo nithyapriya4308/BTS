@@ -1,0 +1,57 @@
+/* CSS styles for responsiveness */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  /* Main content styles */
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  /* Quote styles */
+  .quote {
+    background-color: #f9f9f9;
+    border-left: 5px solid #333;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    /* Adjustments for tablets and mobile devices */
+    .container {
+      padding: 10px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    /* Adjustments for mobile devices */
+    header,
+    footer {
+      padding: 10px;
+    }
+  }

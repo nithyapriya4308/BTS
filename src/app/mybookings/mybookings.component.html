@@ -1,0 +1,53 @@
+<app-main-nav />
+<div class="text-center text-primary mt-5 fw-bold h3" *ngIf="!tableData.length">
+  No Tickets Booked
+</div>
+<div class="table-responsive">
+  <table class="table" *ngIf="tableData.length">
+    <thead>
+      <tr>
+        <th>Ticket Id</th>
+
+        <th>Starting Date</th>
+        <th>Arrival Time</th>
+        <th>Bus Image</th>
+        <th>Bus Name</th>
+        <th>Bus No</th>
+        <th>Reaching Date</th>
+        <th>Departure Time</th>
+        <th>Duration</th>
+        <th>Fare</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <!-- <th>Seats Available</th> -->
+        <!-- <th>Total Seats</th> -->
+        <th>Type</th>
+        <th>Seat Number</th>
+        <!-- <th>User</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item._id }}</td>
+
+        <td>{{ item.bus.departureDate | date }}</td>
+        <td>{{ item.bus.arrivalTime }}</td>
+        <td>{{ item.bus.busImage }}</td>
+        <td>{{ item.bus.busName }}</td>
+        <td>{{ item.bus.busNo }}</td>
+        <td>{{ item.bus.arrivalDate | date }}</td>
+        <td>{{ item.bus.departureTime }}</td>
+        <td>{{ item.bus.duration }}</td>
+        <td>{{ item.bus.fare }}</td>
+        <td>{{ item.bus.origin }}</td>
+        <td>{{ item.bus.destination }}</td>
+        <!-- <td>{{ item.bus.seatsAvailable }}</td> -->
+        <!-- <td>{{ item.bus.totalSeats }}</td> -->
+        <td>{{ item.bus.type }}</td>
+        <td>{{ item.seatNumber }}</td>
+        <!-- <td>{{ item.user }}</td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,230 @@
+<nav class="bg-gray-800 py-4">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div
+          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+        >
+          <div class="flex flex-shrink-0 items-center">
+            <img
+              class="h-8 w-auto lg:block"
+              src="https://i.pinimg.com/originals/3d/eb/ea/3debea22fdfb2c7490fe1bd8f880ccec.jpg"
+              alt="Your Company"
+            />
+          </div>
+          <div class="sm:ml-6 sm:block">
+            <div class="flex justify-center space-x-4">
+              <a
+                href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+              ></a>
+              <a
+                routerLink=""
+                class="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                >Home</a
+              >
+              <a
+                *ngIf="admin"
+                routerLink="/addbus"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                >Add Bus</a
+              >
+              <a
+                *ngIf="admin"
+                routerLink="/buseslist"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium"
+                >Buses List</a
+              >
+              <!-- <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Buses</a> -->
+              <!-- <a href="/login"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Passenger</a> -->
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+        >
+          <a
+            routerLink="/support"
+            class="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg me-4"
+          >
+            <i class=" bi bi-question-circle" type="button"></i> Support</a
+          >
+          <button
+            type="button"
+            class="rounded-full border bg-gray-800 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 me-4"
+            routerLink="/mybookings"
+            *ngIf="role == 'user'"
+          >
+            My Bookings
+          </button>
+  
+          <!-- <button
+            type="button"
+            *ngIf="loggedIn"
+            class="rounded-full border bg-gray-800 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 me-4"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            View Profile
+          </button> -->
+  
+          <ul
+            class="rounded-full border bg-gray-800 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 me-4"
+          >
+            <li class="text-white nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profile
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    >Edit Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal1"
+                    >Change Password</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button
+            type="button"
+            *ngIf="!loggedIn"
+            routerLink="/login"
+            class="text-white btn btn-secondary me-3"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            *ngIf="!loggedIn"
+            routerLink="/register"
+            class="text-white btn btn-secondary"
+          >
+            Register
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            style="background-color: #dc3545"
+            (click)="logout()"
+            *ngIf="loggedIn"
+          >
+            Logout
+          </button>
+        </div>
+  
+        <!-- Modal -->
+      </div>
+    </div>
+  </nav>
+  
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Profile Edit</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body fw-bold">
+          <form action="" [formGroup]="profileForm">
+            <label for="name"> Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <label for="name" class="mt-3"> Email</label>
+            <input type="text" class="form-control" formControlName="email" />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn bg-green-600 hover:bg-green-600"
+            *ngIf="this.profileForm.dirty"
+            (click)="updateProfile()"
+          >
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div
+    class="modal fade"
+    id="exampleModal1"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Profile Edit</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body fw-bold">
+          <form action="" [formGroup]="passwordForm">
+            <label for="name"> Old Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="oldpassword"
+            />
+            <label for="name" class="mt-3"> New Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="newpassword"
+            />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn bg-green-600 hover:bg-green-600"
+            *ngIf="this.passwordForm.dirty"
+            (click)="updatePassword()"
+          >
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

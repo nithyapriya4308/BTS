@@ -1,0 +1,39 @@
+<app-main-nav />
+<div class="bus-details">
+  <div class="bus-info">
+    <img class="bus-image" [src]="link + busDetails.busImage" alt="Bus Image" />
+  </div>
+  <div class="bus-name">Bus Name: {{ busDetails.busName }}</div>
+  <div class="bus-no">Bus No: {{ busDetails.busNo }}</div>
+  <div class="route-info">
+    <div class="origin">Origin: {{ busDetails.origin }}</div>
+    <div class="destination">Destination: {{ busDetails.destination }}</div>
+    <div class="departure">
+      Departure: {{ busDetails.departureDate | date }}
+      {{ busDetails.departureTime }}
+    </div>
+    <div class="arrival">
+      Arrival: {{ busDetails.arrivalDate | date }} {{ busDetails.arrivalTime }}
+    </div>
+    <div class="duration">Duration: {{ busDetails.duration }}</div>
+  </div>
+  <div class="fare-info">
+    <div class="fare">Fare: {{ busDetails.fare }}</div>
+    <div class="seats-available">
+      Seats Available: {{ busDetails.seatsAvailable }}
+    </div>
+    <div class="bus-type">Type: {{ busDetails.type }}</div>
+  </div>
+
+
+  <div class="container">
+    <div class="row gap-5 justify-content-center">
+      <div class="seat text-center card" *ngFor="let item of seats">
+        <span class="{{ checkAvailable(item) ? 'bg-primary' : 'bg-danger' }}">
+          {{ item }}</span
+        >
+      </div>
+      <!-- checkAvailable(item)?'bg-danger': -->
+    </div>
+  </div>
+</div>

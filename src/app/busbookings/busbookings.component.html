@@ -1,0 +1,26 @@
+<app-main-nav />
+<div class="text-center text-primary h3" *ngIf="!tableData.length">
+  No Seats Booked
+</div>
+
+<div class="table-responsive" *ngIf="tableData.length > 0">
+  <table class="table" *ngIf="tableData.length">
+    <thead>
+      <tr>
+        <th>Ticket Id</th>
+        <th>Booked time</th>
+        <th>Seat No</th>
+        <th>User Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData">
+        <td>{{ item._id }}</td>
+        <td>{{ item.createdAt|date:'short' }} </td>
+        <td>{{ item.seatNumber }}</td>
+        <td>{{ item.user }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

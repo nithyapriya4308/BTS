@@ -1,0 +1,58 @@
+<body style="background-image:
+    url('https://wallup.net/wp-content/uploads/2017/11/17/225002-cityscape.jpg');
+    min-height: 120vh;">
+    <app-main-nav />
+    <div class="grid grid-cols-12 bg-green-100 py-7">
+        <div class="col-start-6 col-end-12 ">
+            <h2 class="text-3xl text-green-900" id="auto"><span>M</span>y <span>B</span>ookings</h2>
+        </div>
+        
+        <div class="col-start-5 col-span-12 ">
+            <h2 class="ree"><span>I</span>nformation  <span>A</span>bout  <span>Y</span>our  <span>T</span>rip</h2>
+                
+        </div>
+    </div>
+    <div class="grid grid-cols-12">
+        <div class="col-start-4 col-end-10">
+            <div class="bg-white shadow-2xl p-8" id="border">
+                <h2 class="font-bold text-red-900">Welcome! Please login
+                    in to
+                    proceed</h2>
+                <form [formGroup]="loginForm">
+                    <div class="mb-4 mt-4">
+                        <label class="block text-gray-700 text-sm font-bold
+                            mb-2" for="Email">
+                            Email
+                        </label>
+                        <input class="shadow appearance-none border rounded
+                            w-full py-2 px-3 text-gray-700 leading-tight
+                            focus:outline-none focus:shadow-outline" name="email" id="Email" type="text " required
+                            formControlName="email" type="email" placeholder="Username">
+                    </div>
+                    <p class="text-blue-900"><i class="bi
+                            bi-info-circle-fill"></i> Enter the e-mail
+                        address you used to reserve your trip</p>
+                    <div class="mb-4 mt-4">
+                        <label class="block text-gray-700 text-sm font-bold
+                            mb-2" for="username">
+                            Password
+                        </label>
+                        <input class="shadow appearance-none border rounded
+                            w-full py-2 px-3 text-gray-700 leading-tight
+                            focus:outline-none focus:shadow-outline" id="username" type="password" name="password"
+                            formControlName="password" placeholder="Password">
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="bg-green-800 hover:bg-blue-700
+                            w-64 text-white font-bold py-2 px-4
+                            rounded-full" (click)="login()">
+                            Login
+                        </button>
+                    </div>
+                </form>
+                <p class="">Don't have an account ?<a routerLink="/register" class="text-primary fw-bold">Register
+                        Here</a> </p>
+            </div>
+        </div>
+    </div>
+</body>

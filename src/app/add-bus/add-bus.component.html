@@ -1,0 +1,241 @@
+<!-- 
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head> -->
+<app-main-nav />
+
+<div
+  style="
+    background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77702103143.jpg');
+    min-height: 100vh;
+  "
+>
+  <!-- <app-main-nav /> -->
+  <div class="grid grid-cols-12 bg-green-100 py-7">
+    <div class="col-start-6 col-end-10">
+      <h2 class="text-3xl text-green-900">My Bookings</h2>
+    </div>
+    <div class="col-start-6 col-end-9">
+      <h2 class="text-md text-green-900 break-after-auto">
+        Information about your trip
+      </h2>
+    </div>
+  </div>
+  <div class="grid grid-cols-12">
+    <div class="col-start-4 col-end-10">
+      <div class="bg-white shadow-2xl p-2">
+        <h2 class="font-bold text-red-900">Add Bus Information🚌🚌</h2>
+        <form class="" [formGroup]="myForm">
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="busNo" class="mt-1 fw-bold">Bus No</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="busNo"
+              type="text"
+              formControlName="busNo"
+              placeholder="Bus No"
+            />
+            <label for="busName" class="mt-1 fw-bold">Bus Name</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="busName"
+              type="text"
+              formControlName="busName"
+              placeholder="Bus Name"
+            />
+          </div>
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="type" class="mt-1 fw-bold">Type</label>
+            <select
+              class="form-select"
+              id="type"
+              aria-label="Default select example"
+              formControlName="type"
+            >
+              <option value="">Select Type</option>
+              <option value="AC">AC</option>
+              <option value="Non-AC">Non-AC</option>
+            </select>
+            <label for="origin" class="mt-1 fw-bold">From</label>
+
+            <select
+              class="form-select"
+              id="origin"
+              aria-label="Default select example"
+              formControlName="origin"
+            >
+              <option value="">Select City</option>
+              <option value="Amaravati">Amaravati</option>
+              <option value="Itanagar">Itanagar</option>
+              <option value="Dispur">Dispur</option>
+              <option value="Patna">Patna</option>
+              <option value="Raipur">Raipur</option>
+              <option value="Panaji">Panaji</option>
+              <option value="Gandhinagar">Gandhinagar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Shimla">Shimla</option>
+              <option value="Srinagar">Srinagar</option>
+              <option value="Ranchi">Ranchi</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Imphal">Imphal</option>
+              <option value="Shillong">Shillong</option>
+              <option value="Aizawl">Aizawl</option>
+              <option value="Kohima">Kohima</option>
+              <option value="Bhubaneswar">Bhubaneswar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Gangtok">Gangtok</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Agartala">Agartala</option>
+              <option value="Lucknow">Lucknow</option>
+              <option value="Dehradun">Dehradun</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Delhi">Delhi</option>
+            </select>
+          </div>
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="destination" class="mt-1 fw-bold">To</label>
+            <select
+              class="form-select"
+              id="destination"
+              aria-label="Default select example"
+              formControlName="destination"
+            >
+              <option value="">Select City</option>
+              <option value="Amaravati">Amaravati</option>
+              <option value="Itanagar">Itanagar</option>
+              <option value="Dispur">Dispur</option>
+              <option value="Patna">Patna</option>
+              <option value="Raipur">Raipur</option>
+              <option value="Panaji">Panaji</option>
+              <option value="Gandhinagar">Gandhinagar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Shimla">Shimla</option>
+              <option value="Srinagar">Srinagar</option>
+              <option value="Ranchi">Ranchi</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Imphal">Imphal</option>
+              <option value="Shillong">Shillong</option>
+              <option value="Aizawl">Aizawl</option>
+              <option value="Kohima">Kohima</option>
+              <option value="Bhubaneswar">Bhubaneswar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Gangtok">Gangtok</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Agartala">Agartala</option>
+              <option value="Lucknow">Lucknow</option>
+              <option value="Dehradun">Dehradun</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Delhi">Delhi</option>
+            </select>
+
+            <label for="departureDate" class="mt-1 fw-bold">Depart Date</label>
+
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="departureDate"
+              type="date"
+              formControlName="departureDate"
+              placeholder="Departure Date"
+            />
+          </div>
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="departureTime" class="mt-1 fw-bold">Depart Time</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="departureTime"
+              type="time"
+              formControlName="departureTime"
+              placeholder="Departure Time"
+            />
+            <label for="arrivalDate" class="mt-1 fw-bold">Arri Date</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="arrivalDate"
+              type="date"
+              formControlName="arrivalDate"
+              placeholder="Arrival Date"
+            />
+          </div>
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="arrivalTime" class="mt-1 fw-bold">Arri Time</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="arrivalTime"
+              type="time"
+              formControlName="arrivalTime"
+              placeholder="Arrival Time"
+            />
+            <label for="seatsAvailable" class="mt-1 fw-bold"
+              >Seats Availble</label
+            >
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight md:w-1/2 focus:outline-none focus:shadow-outline"
+              id="seatsAvailable"
+              type="number"
+              formControlName="seatsAvailable"
+              placeholder="seatsAvailable"
+            />
+          </div>
+          <div class="flex mb-4 mt-4 gap-3">
+            <label for="fare" class="mt-1 fw-bold">Fare</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="fare"
+              type="number"
+              formControlName="fare"
+              placeholder="fare"
+            />
+            <label for="duration" class="mt-1 fw-bold">Duration</label>
+            <input
+              class="shadow appearance-none border rounded flex w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="duration"
+              type="text"
+              formControlName="duration"
+              placeholder="duration"
+            />
+          </div>
+
+          <div class="flex mb-4 mt-4 gap-3">
+            <link
+              rel="stylesheet"
+              href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css"
+            />
+            <div class="w-full mx-auto">
+              <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                for="file_input"
+                >Upload Image</label
+              >
+              <input
+                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                id="file_input"
+                type="file"
+                (change)="fileChoosen($event)"
+              />
+              <!-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> -->
+            </div>
+          </div>
+        </form>
+        <div class="flex justify-center">
+          <button
+            class="bg-green-800 hover:bg-blue-400 w-64 text-white font-bold py-2 px-4 rounded-full"
+            (click)="addBus()"
+          >
+            Add Bus
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

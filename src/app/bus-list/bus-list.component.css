@@ -1,0 +1,11 @@
+.bus-image{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+}
+
+.bus-details{
+    margin-left: 10px;
+    width: 230px;
+    height:400px;
+}

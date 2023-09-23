@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <app-main-nav />
+    <div
+      class="image"
+      style="
+        background-image: url('https://cdn.pixabay.com/photo/2018/01/12/11/55/london-3078109_1280.jpg');
+        min-height: 150vh;
+      "
+    ><marquee width="60%" direction="left" height="100px"><h1 class="text-white">Save up to -60% on flights</h1></marquee> 
+      <div class="flex justify-center pt-10">
+        <h2 class="text-6xl mb-5 text-white">
+         
+         
+          <span>F</span>ly <span>M</span>ore <span>F</span>or <span>L</span>ess <span>W</span>ith <span>M</span>ake <span>M</span>y <span>V</span>acation
+
+         </h2>
+      </div>
+
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-lg-2 col-md-2"></div>
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="card pt-5 pb-5">
+              <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <!-- <li class="nav-item" role="presentation">
+                                    <button class="nav-link " id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home-tab-pane" type="button" role="tab"
+                                        aria-controls="home-tab-pane" aria-selected="false">Return</button>
+                                </li> -->
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="profile-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="profile-tab-pane"
+                      aria-selected="true"
+                    >
+                      One-Way
+                    </button>
+                  </li>
+                  <!-- <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                        aria-controls="contact-tab-pane" aria-selected="false">Multi-City</button>
+                                </li> -->
+                </ul>
+                <div class="tab-content mt-5" id="myTabContent">
+                  <div
+                    class="tab-pane fade"
+                    id="home-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                    tabindex="0"
+                  >
+                    <form>
+                      <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="from" class="form-label">From</label>
+                          <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12"></div>
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="tab-pane fade show active"
+                    id="profile-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                    tabindex="0"
+                  >
+                    <form action="" [formGroup]="searchForm">
+                      <div class="row">
+                        <div class="col-md-3 col-lg-3 col-sm-6">
+                          <label for="origin">Orgin</label>
+                          <select
+                            class="form-select"
+                            id="origin"
+                            aria-label="Default select example"
+                            formControlName="origin"
+                          >
+                            <option value="">Select City</option>
+                            <option value="Amaravati">Amaravati</option>
+                            <option value="Itanagar">Itanagar</option>
+                            <option value="Dispur">Dispur</option>
+                            <option value="Patna">Patna</option>
+                            <option value="Raipur">Raipur</option>
+                            <option value="Panaji">Panaji</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Shimla">Shimla</option>
+                            <option value="Srinagar">Srinagar</option>
+                            <option value="Ranchi">Ranchi</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Thiruvananthapuram">
+                              Thiruvananthapuram
+                            </option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Imphal">Imphal</option>
+                            <option value="Shillong">Shillong</option>
+                            <option value="Aizawl">Aizawl</option>
+                            <option value="Kohima">Kohima</option>
+                            <option value="Bhubaneswar">Bhubaneswar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Gangtok">Gangtok</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Agartala">Agartala</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Dehradun">Dehradun</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                          </select>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6">
+                          <label for="destination">Destination</label>
+                          <select
+                            class="form-select"
+                            id="destination"
+                            formControlName="destination"
+                            aria-label="Default select example"
+                          >
+                            <option value="">Select City</option>
+                            <option value="Amaravati">Amaravati</option>
+                            <option value="Itanagar">Itanagar</option>
+                            <option value="Dispur">Dispur</option>
+                            <option value="Patna">Patna</option>
+                            <option value="Raipur">Raipur</option>
+                            <option value="Panaji">Panaji</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Shimla">Shimla</option>
+                            <option value="Srinagar">Srinagar</option>
+                            <option value="Ranchi">Ranchi</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Thiruvananthapuram">
+                              Thiruvananthapuram
+                            </option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Imphal">Imphal</option>
+                            <option value="Shillong">Shillong</option>
+                            <option value="Aizawl">Aizawl</option>
+                            <option value="Kohima">Kohima</option>
+                            <option value="Bhubaneswar">Bhubaneswar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Gangtok">Gangtok</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Agartala">Agartala</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Dehradun">Dehradun</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                          </select>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6">
+                          <label for="date">Date</label>
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="date"
+                            formControlName="departureDate"
+                          />
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-sm-6">
+                          <button
+                            class="btn btn-outline-primary mt-4"
+                            (click)="SearchBus()"
+                          >
+                            Search
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <!-- ONE WAY CODE  -->
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="contact-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="contact-tab"
+                    tabindex="0"
+                  >
+                    3
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-2"></div>
+        </div>
+      </div>
+      <!-- buses list -->
+
+      <div class="grid grid-cols-12" *ngFor="let item of buses">
+        <div class="col-start-3 col-end-11 py-2 p-8 mt-3 w-full bg-blue-500">
+          <h2 class="text-md text-white fw-bold">
+            Bus Name : {{ item.busName }}
+          </h2>
+        </div>
+        <div class="col-start-3 col-end-5 py-2 p-8 py-5 w-full bg-white">
+          <img class="w-32 h-32" [src]="link + item.busImage" />
+          <h2 class="text-2xl">
+            <strong class="text-primary">Bus No</strong>{{ item.busNo }}
+          </h2>
+        </div>
+        <div class="col-start-5 col-end-7 text-3xl bg-white">
+          <h2 class="mt-20 text-5xl">{{ item.departureTime }}</h2>
+          <h2 class="mt-2 text-3xl">{{ item.origin }}</h2>
+        </div>
+        <div class="col-start-7 col-end-8 bg-white">
+          <h2 class="mt-20"><i class="bi bi-arrow-right text-5xl"></i></h2>
+          <h2 class="fw-bold ml-10">{{ item.type }}</h2>
+          <h1 class="h2 fw-bold text-primary">{{ item.duration }}</h1>
+        </div>
+        <div class="col-start-8 col-end-11 text-3xl bg-white text-center">
+          <h2 class="mt-20 text-5xl">{{ item.arrivalTime }}</h2>
+          <h2 class="mt-2 text-3xl">{{ item.destination }}</h2>
+          <div class="col-start-10 mt-10 mb-4">
+            <h2 class="text-2xl">fare : ₹{{ item.fare }} per each</h2>
+            <button class="btn btn-primary" (click)="routeToBook(item._id)">
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 lg:w-1/3">
+              <div
+                class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+              >
+                <h2
+                  class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
+                >
+                  CATEGORY
+                </h2>
+                <h1
+                  class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3"
+                >
+                  Super Flexible
+                </h1>
+                <p class="leading-relaxed mb-3">
+                  Change of plans? With our services you can book stress free
+                  and protect your travel in no time. Check our options:
+                  Flexible Ticket, Cancellation Guarantee and so many more!
+                </p>
+                <a class="text-indigo-500 inline-flex items-center"
+                  >Learn More
+                  <svg
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0
+                                            24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <div
+                  class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4"
+                >
+                  <span
+                    class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11
+                                                    8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle></svg
+                    >1.2K
+                  </span>
+                  <span
+                    class="text-gray-400 inline-flex items-center leading-none text-sm"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21 11.5a8.38 8.38 0
+                                                    01-.9 3.8 8.5 8.5 0 01-7.6
+                                                    4.7 8.38 8.38 0 01-3.8-.9L3
+                                                    21l1.9-5.7a8.38 8.38 0
+                                                    01-.9-3.8 8.5 8.5 0
+                                                    014.7-7.6 8.38 8.38 0
+                                                    013.8-.9h.5a8.48 8.48 0 018
+                                                    8v.5z"
+                      ></path></svg
+                    >6
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/3">
+              <div
+                class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+              >
+                <h2
+                  class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
+                >
+                  CATEGORY
+                </h2>
+                <h1
+                  class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3"
+                >
+                  Stay Informed
+                </h1>
+                <p class="leading-relaxed mb-3">
+                  Need more info about your flight? Login to My Bookings for
+                  trip details, check-in options and everything about your
+                  add-ons. Plus, track your refund status in real time with no
+                  stress.
+                </p>
+                <a class="text-indigo-500 inline-flex items-center"
+                  >Learn More
+                  <svg
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0
+                                            24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <div
+                  class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4"
+                >
+                  <span
+                    class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11
+                                                    8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle></svg
+                    >1.2K
+                  </span>
+                  <span
+                    class="text-gray-400 inline-flex items-center leading-none text-sm"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21 11.5a8.38 8.38 0
+                                                    01-.9 3.8 8.5 8.5 0 01-7.6
+                                                    4.7 8.38 8.38 0 01-3.8-.9L3
+                                                    21l1.9-5.7a8.38 8.38 0
+                                                    01-.9-3.8 8.5 8.5 0
+                                                    014.7-7.6 8.38 8.38 0
+                                                    013.8-.9h.5a8.48 8.48 0 018
+                                                    8v.5z"
+                      ></path></svg
+                    >6
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/3">
+              <div
+                class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative"
+              >
+                <h2
+                  class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
+                >
+                  CATEGORY
+                </h2>
+                <h1
+                  class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3"
+                >
+                  Save big and plan easy
+                </h1>
+                <p class="leading-relaxed mb-3">
+                  Ready to travel more for less? With the Mytrip app you can
+                  book flights, store your booking details, and check in
+                  hassle-free. Plus, you gain access to exclusive offers and
+                  deals.
+                </p>
+                <a class="text-indigo-500 inline-flex items-center"
+                  >Learn More
+                  <svg
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0
+                                            24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <div
+                  class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4"
+                >
+                  <span
+                    class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11
+                                                    8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle></svg
+                    >1.2K
+                  </span>
+                  <span
+                    class="text-gray-400 inline-flex items-center leading-none text-sm"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M21 11.5a8.38 8.38 0
+                                                    01-.9 3.8 8.5 8.5 0 01-7.6
+                                                    4.7 8.38 8.38 0 01-3.8-.9L3
+                                                    21l1.9-5.7a8.38 8.38 0
+                                                    01-.9-3.8 8.5 8.5 0
+                                                    014.7-7.6 8.38 8.38 0
+                                                    013.8-.9h.5a8.48 8.48 0 018
+                                                    8v.5z"
+                      ></path></svg
+                    >6
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-gray-600 body-font">
+        <div
+          class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+        >
+          <div
+            class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10"
+          >
+            <a
+              class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                viewBox="0 0 24
+                                    24"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5
+                                        10-5M2 12l10 5 10-5"
+                ></path>
+              </svg>
+              <span class="ml-3 text-xl"><a href="">To Book Your Tickets</a></span>
+            </a>
+            <p class="mt-2 text-sm text-gray-500">
+              Air plant banjo lyft occupy retro adaptogen indego
+            </p>
+          </div>
+          <div
+            class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first"
+          >
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+              >
+                CATEGORIES
+              </h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a href="">First Link</a>
+                </li>
+                <li>
+                  <a class="">Second Link</a>
+                </li>
+                <li>
+                  <a class="">Third Link</a>
+                </li>
+                <li>
+                  <a class="">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+              >
+                CATEGORIES
+              </h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+              >
+                CATEGORIES
+              </h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2
+                class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+              >
+                CATEGORIES
+              </h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-100">
+          <div
+            class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+          >
+            <p class="text-gray-500 text-sm text-center sm:text-left">
+              © 2020 Tailblocks —
+              <a
+                href="https://twitter.com/knyttneve"
+                rel="noopener noreferrer"
+                class="text-gray-600 ml-1"
+                target="_blank"
+                >@knyttneve</a
+              >
+            </p>
+            <span
+              class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+            >
+              <a class="text-gray-500">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 00-5
+                                            5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0
+                                            011-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53
+                                            4.48 4.48 0 00-7.86 3v1A10.66 10.66
+                                            0 013 4s-4 9 5 13a11.64 11.64 0 01-7
+                                            2c9 5 20 0 20-11.5a4.5 4.5 0
+                                            00-.08-.83A7.72 7.72 0 0023 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1112.63 8 4 4 0
+                                            0116 11.37zm1.5-4.87h.01"
+                  ></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="none"
+                    d="M16 8a6 6 0 016
+                                            6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2
+                                            2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  ></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<!-- before changes -->
+
+<!-- <div class="flex bg-white p-3 shadow-lg w-9/12 ">
+    <div class="grid grid-cols-12">
+
+
+
+        
+        <div class="col-start-1 col-end-10">
+
+                <div class="flex gap-10">
+                    <div class="inline-flex items-center">
+                        <label
+                            class="relative flex cursor-pointer
+                            items-center
+                            rounded-full p-3"
+                            for="html"
+                            data-ripple-dark="true">
+                            <input
+
+                                id="html"
+                                name="type"
+                                type="radio"
+                                class="before:content[''] peer
+                                relative
+                                h-5
+                                w-5 cursor-pointer
+                                appearance-none
+                                rounded-full border
+                                border-blue-gray-200
+                                text-pink-500 transition-all
+                                before:absolute
+                                before:top-2/4 before:left-2/4
+                                before:block
+                                before:h-12 before:w-12
+                                before:-translate-y-2/4
+                                before:-translate-x-2/4
+                                before:rounded-full
+                                before:bg-blue-gray-500
+                                before:opacity-0
+                                before:transition-opacity
+                                checked:border-pink-500
+                                checked:before:bg-pink-500
+                                hover:before:opacity-10"
+                                />
+                            <div class="pointer-events-none
+                                absolute
+                                top-2/4
+                                left-2/4 -translate-y-2/4
+                                -translate-x-2/4
+                                text-pink-500 opacity-0
+                                transition-opacity
+                                peer-checked:opacity-100">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3.5 w-3.5"
+                                    viewBox="0 0 16 16"
+                                    fill="currentColor">
+                                    <circle data-name="ellipse"
+                                        cx="8"
+                                        cy="8" r="8"></circle>
+                                </svg>
+                            </div>
+                        </label>
+                        <label
+                            class="mt-px cursor-pointer
+                            select-none
+                            font-bold text-gray-700"
+                            for="html">
+                            Return
+                        </label>
+                    </div>
+                    <div class="inline-flex items-center">
+                        <label
+                            class="relative flex cursor-pointer
+                            items-center
+                            rounded-full p-3"
+                            for="react"
+                            data-ripple-dark="true">
+                            <input
+                                id="react"
+                                name="type"
+                                type="radio"
+                                class="before:content[''] peer
+                                relative
+                                h-5
+                                w-5 cursor-pointer
+                                appearance-none
+                                rounded-full border
+                                border-blue-gray-200
+                                text-pink-500 transition-all
+                                before:absolute
+                                before:top-2/4 before:left-2/4
+                                before:block
+                                before:h-12 before:w-12
+                                before:-translate-y-2/4
+                                before:-translate-x-2/4
+                                before:rounded-full
+                                before:bg-blue-gray-500
+                                before:opacity-0
+                                before:transition-opacity
+                                checked:border-pink-500
+                                checked:before:bg-pink-500
+                                hover:before:opacity-10"
+                                />
+                            <div class="pointer-events-none
+                                absolute
+                                top-2/4
+                                left-2/4 -translate-y-2/4
+                                -translate-x-2/4
+                                text-pink-500 opacity-0
+                                transition-opacity
+                                peer-checked:opacity-100">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3.5 w-3.5"
+                                    viewBox="0 0 16 16"
+                                    fill="currentColor">
+                                    <circle data-name="ellipse"
+                                        cx="8"
+                                        cy="8" r="8"></circle>
+                                </svg>
+                            </div>
+                        </label>
+                        <label
+                            class="mt-px cursor-pointer
+                            select-none
+                            font-bold text-gray-700"
+                            for="react">
+                            One-Way
+                        </label>
+                    </div>
+                    <div class="inline-flex items-center">
+                        <label
+                            class="relative flex cursor-pointer
+                            items-center
+                            rounded-full p-3"
+                            for="react"
+                            data-ripple-dark="true">
+                            <input
+                                id="react"
+                                name="type"
+                                type="radio"
+                                class="before:content[''] peer
+                                relative
+                                h-5
+                                w-5 cursor-pointer
+                                appearance-none
+                                rounded-full border
+                                border-blue-gray-200
+                                text-pink-500 transition-all
+                                before:absolute
+                                before:top-2/4 before:left-2/4
+                                before:block
+                                before:h-12 before:w-12
+                                before:-translate-y-2/4
+                                before:-translate-x-2/4
+                                before:rounded-full
+                                before:bg-blue-gray-500
+                                before:opacity-0
+                                before:transition-opacity
+                                checked:border-pink-500
+                                checked:before:bg-pink-500
+                                hover:before:opacity-10"
+                                />
+                            <div class="pointer-events-none
+                                absolute
+                                top-2/4
+                                left-2/4 -translate-y-2/4
+                                -translate-x-2/4
+                                text-pink-500 opacity-0
+                                transition-opacity
+                                peer-checked:opacity-100">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-3.5 w-3.5"
+                                    viewBox="0 0 16 16"
+                                    fill="currentColor">
+                                    <circle data-name="ellipse"
+                                        cx="8"
+                                        cy="8" r="8"></circle>
+                                </svg>
+                            </div>
+                        </label>
+                        <label
+                            class="mt-px cursor-pointer
+                            select-none text-lg font-black
+                            font-bold text-gray-700"
+                            for="react">
+                            Multi-City
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-start-1 col-end-12 mt-10">
+
+                <form class="w-full max-w-lg">
+                    <div class="flex mb-6">
+                        <div class="w-11/12 px-3 mb-6
+                            md:mb-0">
+                            <label class="block uppercase
+                                tracking-wide
+                                text-gray-700 text-xs font-bold
+                                mb-2"
+                                for="grid-first-name">
+                                FROM
+                            </label>
+                            <input class="appearance-none block
+                                w-full
+                                bg-gray-200 text-gray-700 border
+                                border-red-500 rounded py-3 px-4
+                                mb-3
+                                leading-tight focus:outline-none
+                                focus:bg-white"
+                                id="grid-first-name"
+                                type="text" placeholder="from">
+                        </div>
+                        <div class="mt-9 text-2xl">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </div>
+
+                        <div class="w-full px-3 mb-6
+                            md:mb-0">
+                            <label class="block uppercase
+                                tracking-wide
+                                text-gray-700 text-xs font-bold
+                                mb-2"
+                                for="grid-first-name">
+                                TO
+                            </label>
+                            <input class="appearance-none block
+                                w-full
+                                bg-gray-200 text-gray-700 border
+                                border-red-500 rounded py-3 px-4
+                                mb-3
+                                leading-tight focus:outline-none
+                                focus:bg-white"
+                                id="grid-first-name"
+                                type="text" placeholder="to">
+                        </div>
+                    </div>
+                </form>
+                <div class="col-start-8 col-end-9">
+                    <button class="bg-blue-500 hover:bg-blue-700
+                        w-64 text-white font-bold py-2 px-4
+                        rounded-full">
+                        Search Bus
+                    </button>
+                </div>
+            </div>
+    </div>
+
+</div> -->
+

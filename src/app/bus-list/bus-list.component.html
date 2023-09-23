@@ -1,0 +1,73 @@
+<app-main-nav />
+<div class="row">
+  <div class="mt-3 col-md-3" *ngFor="let busDetails of buses">
+    <div class="bus-details card text-center">
+      <div class="bus-info">
+        <img
+          class="bus-image"
+          [src]="link + busDetails.busImage"
+          alt="Bus Image"
+        />
+      </div>
+      <div class="bus-name">
+        Bus Name:<strong class="fw-bold text-primary">
+          {{ busDetails.busName }}</strong
+        >
+      </div>
+      <div class="bus-no">
+        Bus No:
+        <strong class="fw-bold text-primary">{{ busDetails.busNo }}</strong>
+      </div>
+      <div class="route-info">
+        <div class="origin">Origin: {{ busDetails.origin }}</div>
+        <div class="destination">Destination: {{ busDetails.destination }}</div>
+        <div class="departure">
+          Departure: {{ busDetails.departureDate | date }}
+          {{ busDetails.departureTime }}
+        </div>
+        <div class="arrival">
+          Arrival: {{ busDetails.arrivalDate | date }}
+          {{ busDetails.arrivalTime }}
+        </div>
+        <div class="duration">Duration: {{ busDetails.duration }}</div>
+      </div>
+      <div class="fare-info">
+        <div class="fare">Fare: {{ busDetails.fare }}</div>
+        <div class="seats-available">
+          Total Seats :
+          <strong class="fw-bold text-primary">
+            {{ busDetails.totalSeats }}</strong
+          >
+        </div>
+        <div class="seats-available">
+          Seats Available:
+          <strong class="fw-bold text-primary">{{
+            busDetails.seatsAvailable
+          }}</strong>
+        </div>
+        <div class="bus-type">
+          Type:
+          <strong class="fw-bold text-primary"> {{ busDetails.type }}</strong>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2 mt-2">
+        <div class="col-5">
+          <button
+            class="btn btn-primary"
+            routerLink="/busseats/{{ busDetails._id }}"
+          >
+            View Seats
+          </button>
+        </div>
+        <div class="col-5">
+          <button
+            class="btn btn-secondary"
+            routerLink="/busbookings/{{ busDetails._id }}"
+          >
+            View Bookings
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

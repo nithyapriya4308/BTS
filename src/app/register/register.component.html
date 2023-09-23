@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body
+    class="image"
+    style="
+      background-image: url('https://res.klook.com/image/upload/q_80/blogen/Singapore-Cityscape.jpg');
+      min-height: 100vh;
+    "
+  >
+    <app-main-nav />
+    <div class="grid grid-cols-12 bg-green-100 py-7">
+      <div class="col-start-6 col-end-10">
+        <h1 class="text-3xl text-green-900" id="auto"><span>M</span>y <span>B</span>ookings</h1>
+      </div>
+      <div class="col-start-5 col-span-12">
+        <h2 class="text-md text-green-900 break-after-auto"  id="ree">
+          <span>I</span>nformation <span>A</span>bout <span>Y</span>our <span>T</span>rip
+        </h2>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <div class="bg-white mt-10 w-6/12 shadow-2xl p-8" id="border">
+        <h2 class="font-bold text-red-900">
+          Welcome! Please Register to proceed
+        </h2>
+
+        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+          <div class="mb-4 mt-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              Name
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="name"
+              id="username"
+              type="text"
+              formControlName="name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="mb-4 mt-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              Email *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="email"
+              id="username"
+              type="text"
+              formControlName="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="mb-4 mt-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              Password *
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="password"
+              id="username"
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="mb-4 mt-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              Address
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="address"
+              id="username"
+              type="text"
+              formControlName="address"
+              placeholder="Address"
+            />
+          </div>
+          <div class="mb-4 mt-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              PhoneNumber
+            </label>
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="phoneNumber"
+              id="username"
+              type="text"
+              formControlName="phone"
+              placeholder="Phone Number"
+            />
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="bg-green-800 hover:bg-blue-700 w-64 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+        <p class="">
+          Already have an account
+          <a routerLink="/login" class="text-primary fw-bold">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
